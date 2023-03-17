@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: test-component-sfii
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: test-component-sfii
+    app.kubernetes.io/part-of: test-app-vlvb
+  name: test-component-sfii
+  namespace: build-e2e-xxsw-tenant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-app
+      app.kubernetes.io/instance: test-component-sfii
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: python-app
+        app.kubernetes.io/instance: test-component-sfii
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio-qe/test-images:3b251fd0fe874ac18448d93afcdbc69e
+        name: my-python
+        ports:
+        - containerPort: 8081
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 10m
+            memory: 50Mi
+status: {}
