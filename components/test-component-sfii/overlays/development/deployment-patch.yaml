@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: test-component-sfii
+  namespace: build-e2e-xxsw-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio-qe/test-images@sha256:56b0b68ccbb5c1e91eeddf4b79ea055649094ef63ebc09d2bad1c0c8140c8fff
+        name: my-python
+        resources: {}
+status: {}
