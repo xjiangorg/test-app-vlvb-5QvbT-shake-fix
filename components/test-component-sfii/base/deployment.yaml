@@ -25,7 +25,7 @@ spec:
         app.kubernetes.io/instance: test-component-sfii
     spec:
       containers:
-      - image: quay.io/redhat-appstudio-qe/test-images:3b251fd0fe874ac18448d93afcdbc69e
+      - image: quay.io/redhat-appstudio-qe/test-images@sha256:56b0b68ccbb5c1e91eeddf4b79ea055649094ef63ebc09d2bad1c0c8140c8fff
         name: my-python
         ports:
         - containerPort: 8081
